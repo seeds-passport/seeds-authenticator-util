@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 
-const callApi  = () => (url, data) => {
+const callApi = () => async (url, data) => {
   const response = await fetch(url, {
     method: "POST",
     headers: {
@@ -9,6 +9,6 @@ const callApi  = () => (url, data) => {
     body: JSON.stringify(data),
   });
   return await response.json();
-}
+};
 
-module.exports = callApi
+module.exports = callApi;
